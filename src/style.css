@@ -1,18 +1,26 @@
-*{box-sizing: border-box;}
+*{box-sizing: border-box;margin: 0;padding: 0;}
 *::before, *::after{box-sizing: border-box;}
-/* 鼻子 */
+
+/* 皮肤 */
+body {
+    min-height: 100vh;
+    background: #ffe600;
+}
 .skin {
     position: relative;
 }
+
+/* 鼻子 */
 .nose {
-    border: 10px solid red;
-    border-color: red transparent transparent;
+    border: 10px solid #000;
+    border-color: #000 transparent transparent;
     width: 0px;
     height: 0px;
     position: absolute;
     left: 50%;
     top: 145px;
     margin-left: -10px;
+    z-index: 1;
 }
 .yuan {
     position: absolute;
@@ -21,12 +29,12 @@
     top: -16px;
     left: -10px;
     border-radius: 10px 10px 0 0;
-    background: red;
+    background: #000;
 }
 
 /* 眼睛 */
 .eye {
-    border: 2px solid black;
+    border: 2px solid #000;
     width: 64px;
     height: 64px;
     position: absolute;
@@ -53,4 +61,59 @@
 }
 .eye.right {
     transform: translateX(100px);
+}
+
+/* 嘴 */
+.mouth {
+    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 170px;
+    margin-left: -100px;
+}
+
+.mouth .up {
+    position: relative;
+    top:-20px;
+}
+
+.mouth .up .lip {
+    border: 5px solid #000;
+    height: 30px;
+    width: 100px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.mouth .up .lip::before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    background: #ffe600;
+}
+
+.mouth .up .lip.left {
+    border-radius: 0 0 0 50px;
+    transform: rotate(-15deg) translateX(-53px);
+
+}
+.mouth .up .lip.left::before {
+    right: -6px;
+}
+
+.mouth .up .lip.right {
+    border-radius: 0 0 50px 0;
+    transform: rotate(15deg) translateX(53px);
+}
+.mouth .up .lip.right::before {
+    left: -6px;
 }
