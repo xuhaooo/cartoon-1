@@ -189,3 +189,12 @@ body {
     background: #ff0000;
     border-radius: 50%;
 }
+.face > img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.face.left > img {
+    transform: rotateY(180deg);
+    transform-origin: 0 0;
+}
